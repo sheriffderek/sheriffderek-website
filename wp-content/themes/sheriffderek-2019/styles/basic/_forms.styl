@@ -1,0 +1,35 @@
+.form
+  max-width: 400px
+  header
+  .invitation
+    font-size: 20px
+  .name
+    font-size: 16px
+  .field
+    display: block
+    display: flex
+    flex-direction: column
+    cursor: pointer
+    padding: $pad
+    transform: translate(-($pad), 0)
+.form .field:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.form .field .label {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.form .field .asterisk {
+  color: red;
+}
+.form .field .input.text,
+.form .field .input.email
+  display: block
+  font: inherit
+  padding: 0.5rem
+  margin-top: 0.2rem
+
+.form footer
+  margin-top: 1rem
+

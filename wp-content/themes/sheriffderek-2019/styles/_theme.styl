@@ -1,0 +1,158 @@
+
+&
+  // background: linear-gradient(90deg, pink 0%, $color 100%)
+  height: 100%
+
+body
+  standard-voice()
+  color: rgba($black, 0.8)
+
+.menu-site-menu-container
+  //
+  .menu
+    display: flex
+    flex-direction: row
+  .menu-item
+    //
+    a
+      padding: $pad // offset the parent to make up for this
+  .menu
+    transform: translate(-($pad), 0)
+
+.avatar
+  max-width: 80px
+  border-radius: 50%
+  overflow: hidden
+
+.articles-by-catagory
+  position: fixed
+  right: $pad*2
+  bottom: $pad*4
+  .item-list
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+  .item
+    //
+  .link
+    font-size: 9vw
+    font-weight: 700
+    line-height: 0.5
+    padding: $pad
+    uppercase()
+    text-shadow: 2px 2px 0 $color
+    cursor: pointer
+    @media $break-point-1
+      text-shadow: 3px 3px 0 $color
+      line-height: 0.7
+    @media $break-point-2
+      text-shadow: 5px 5px 0 $color
+    @media (hover: hover)
+      transition: 1s
+      transition-delay: .2s
+      &:hover
+        color: rgba($white, 0.9)
+        text-shadow: 0 0 0 $white
+        // transition: 1s
+        // transition-delay: .2s
+    &:active
+      color: $color
+      transition: 0
+      transition-delay: 0
+
+.site-menu
+  .item-list
+    display: flex
+    flex-direction: row
+    transform: translate(-($pad), 0)
+  .item
+    //
+  .link
+    padding: $pad
+
+
+.content
+  // color: $white
+  h1
+    voice()
+  h1 + p
+    margin-top: $pad*2
+  h1 + h2
+    margin-top: $pad*4
+  h2
+    calm-voice()
+    color: $gray
+  h2 + p,
+  h2 + h1
+    margin-top: $pad*2
+  p
+    max-width: 700px
+    & + p
+      margin-top: $pad
+    & + h2
+      margin-top: $pad*4
+  
+  p, h1, h2, h3, h4, h4, h6, ul, ol
+    em
+      font-style: italic
+    strong
+      font-weight: 700
+  .date
+    margin-top: $pad*3
+  styled-lists()
+  ul + h2
+    margin-top: $pad*4
+  ul, p
+    a
+      color: $color-dark
+  ul
+    max-width: 700px
+
+
+
+::selection {
+  background: $highlight /* WebKit/Blink Browsers */
+  color: $white
+}
+::-moz-selection {
+  background: $highlight /* Gecko Browsers */
+  color: $white
+}
+
+h2::selection {
+  background: $color /* WebKit/Blink Browsers */
+  color: $white
+}
+h2::-moz-selection {
+  background: $color /* Gecko Browsers */
+  color: $white
+}
+
+p::selection {
+  background: $highlight-dark /* WebKit/Blink Browsers */
+  color: $white
+}
+p::-moz-selection {
+  background: $highlight-dark /* Gecko Browsers */
+  color: $white
+}
+
+.article-list
+  .article
+    margin-top: $pad*4
+    .date
+      micro-copy()
+      color: $color
+    .updated
+      opacity: .6
+      &:before
+        content: ' -'
+
+.mailing-list
+  margin-top: $pad*8
+  
+.page-content
+  padding-bottom: $pad*8
+  
+
+
