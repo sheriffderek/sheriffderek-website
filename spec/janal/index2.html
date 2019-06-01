@@ -1,0 +1,260 @@
+
+<!doctype html>
+
+<html class=''>
+
+
+<head>
+	<title>basic-wire-frames</title>
+	<meta name='description' content='' />
+
+	<link rel='stylesheet' href='stylesheets/app.css' />
+	<link rel='favicon' type='image/png' href='favicon.ico' />
+
+	<meta name='viewport' content='initial-scale=1, maximum-scale=1' />
+</head>
+
+
+<body>
+<!-- ▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽ -->
+
+<!--
+
+
+
+-->
+
+<div class='container' ng-app=''>
+
+
+<form action='' class='container box-form'>
+  
+  <ul class='block-list input-list' ng-init='unit = 8'>
+
+
+
+    <li>
+      <fieldgroup class='block size'>
+        
+        <h3><label for='c_width'>width</label></h3>
+        
+        <div class='input-w' ng-init='wf = 1'>
+          <input ng-model='wFeet' type='number' id='w_feet' min='0'placeholder='Feet' />
+          <label for='w_feet'>Ft.</label>
+        </div>
+
+        <div class='input-w' ng-init='wi = 0'>
+          <input ng-model='wInches' type='number' id='w_inches' min='0' placeholder='Inches' value='8' />          
+          <label for='w_inches'>Inches.</label>
+        </div>
+      
+        <input class='collector' type='number' value='{{ wFeet*12 + wInches }}' id='c_width' />
+
+      </fieldgroup>
+    </li>
+
+
+    <li>
+      <fieldgroup class='block size'>
+        
+        <h3><label for='c_depth'>depth</label></h3>
+        
+        <div class='input-w' ng-init='df = 1'>
+          <input ng-model='dFeet' type='number' id='d_feet' min='1' placeholder='Feet'/>
+          <label for='d_feet'>Ft.</label>
+        </div>
+
+        <div class='input-w' ng-init='di = 0'>
+          <input ng-model='dInches' type='number' id='d_inches' min='0' placeholder='Inches' value='8' />
+          <label for='d_inches'>Inches.</label>
+        </div>
+      
+        <input class='collector' type='number' value='{{ dFeet*12 + dInches }}' id='c_depth' />
+
+      </fieldgroup>
+    </li>
+
+    
+    <li>
+      <fieldgroup class='block size'>
+        
+        <h3><label for='c_height'>height</label></h3>
+        
+        <div class='input-w' ng-init='hf = 1'>
+          <input ng-model='hFeet' type='number' id='h_feet' min='1' placeholder='Feet'/>
+          <label for='h_feet'>Ft.</label>
+        </div>
+
+        <div class='input-w' ng-init='hi = 0'>
+          <input ng-model='hInches' type='number' id='h_inches' min='0' placeholder='Inches' value='8' />      
+          <label for='h_inches'>Inches.</label>
+        </div>
+
+        <input class='collector' type='number' value='{{ hFeet*12 + hInches }}' id='c_height' />
+
+      </fieldgroup>
+    </li>
+
+
+    <!--
+
+    <li>
+      <label for=''>outer-wall thickness<br />
+        <select ng-model='wallThickness' name='height' id='wall_thickness'>
+          <option default value='.25'>1/4in</option>
+          <option value='.375'>3/8in</option>
+          <option value='.50'>1/2in</option>
+        </select>
+      </label>
+    </li>
+    <li>
+    <label for='foam-thickness'>foam thickness<br />
+      <select ng-model='' name='foam-thickness' id='foam_thickness'>
+        <option value='.25'>1/4in</option>
+        <option value='.375'>3/8in</option>
+        <option value='.50'>1/2in</option>
+      </select>
+    </label>
+    </li>
+
+    -->
+
+  </ul>
+
+  <input type='submit' />
+
+</form>
+
+<input 
+  ng-model='xAxis' 
+  min='0' max='360' defaultValue='20'
+  type='range'
+  defaultValue='30'
+  id='slide_1' />
+<input 
+  ng-model='yAxis' 
+  min='0' max='360' defaultValue='20'
+  type='range'
+  defaultValue='300'
+  id='slide_2' />
+
+
+<div id='tridiv'>
+  <div class='scene'
+    style='
+    -webkit-transform:rotateX(-20deg) rotateY(200deg);
+    '>
+
+    <div class='shape cuboid-1 cub-1'>
+
+      <!-- front -->
+      <div class='face ft' style='
+        height: {{ (hFeet*12 + hInches) * unit }}px;
+        width: {{ (dFeet*12 + dInches) * unit }}px;
+        '>
+        <div class='photon-shader' style='background: #444'></div>
+        <span>front</span>
+      </div>
+
+      
+      <!-- back -->
+      <div class='face bk' style='
+        height: {{ (hFeet*12 + hInches) * unit }}px;
+        width: {{ (dFeet*12 + dInches) * unit }}px;
+        '>
+        <div class='photon-shader' style='background: #444'></div>
+        <span>back</span>
+      </div>
+
+      
+      <!-- right -->
+      <div class='face rt' style='
+        height: {{ (hFeet*12 + hInches) * unit }}px;
+        width: {{ (wFeet*12 + wInches) * unit }}px;
+        '>
+        <div class='photon-shader' style='background: #777'></div>
+        <span>right</span>
+      </div>
+
+
+      <!-- left -->
+      <div class='face lt' style='
+        height: {{ (hFeet*12 + hInches) * unit }}px;
+        width: {{ (wFeet*12 + wInches) * unit }}px;
+        '>
+        <div class='photon-shader' style='background: #777'></div>
+        <span>left</span>
+      </div>
+
+
+
+      <!-- bottom -->
+      <div class='face bm' style='
+        height: {{ (wFeet*12 + wInches) * unit }}px;
+        width: {{ (dFeet*12 + dInches) * unit }}px;
+        '>
+        <div class='photon-shader' style='background: black'></div>
+        <span>bottom</span>
+      </div>
+
+
+      <!-- top -->
+      <div class='face tp' style='
+        height: {{ (wFeet*12 + wInches) * unit }}px;
+        width: {{ (dFeet*12 + dInches) * unit }}px;
+        '>
+        <div class='photon-shader' style='background: black;'>
+          <div class='case'
+            style='
+            height: {{ (wFeet*12 + wInches) * unit }}px;
+            width: {{ (dFeet*12 + dInches) * unit }}px;
+            background: transparent;
+            '>
+            <div class='outer-wall' style='border: {{4}}px solid black;'>
+              <div class='inner-foam'>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <span>top</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+ 
+<!-- <section class='container build'>
+  <div class='case ghost'
+    style='
+      width: {{ (wFeet*12 + wInches) * (unit/2) }}px;
+      height: {{ (dFeet*12 + dInches) * (unit/2) }}px;
+      background: gray;
+    '>
+    <div class='outer-wall' style='border: {{4}}px solid black;'>
+      <div class='inner-foam'>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+                       
+</div>
+
+
+
+
+<!-- △△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△ -->
+
+<!-- scripts -->
+<script src='javascripts/vendor.js'></script>
+<script src='javascripts/app.js'></script>
+
+
+</body>
+</html> <!-- fin -->

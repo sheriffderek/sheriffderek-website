@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+
+
+<head>
+	<title>client Information | sheriffderek Consulting</title>
+	<meta name='description' content='A resource for the clients and partners of sheriffderek.consulting, a Los Angeles based team of people who help you make things better.' />
+
+	<link rel='stylesheet' href='stylesheets/app.css' />
+	
+	<link rel='favicon' type='image/png' href='dot.ico'>
+
+	<meta name='viewport' content='initial-scale=1, maximum-scale=1' />
+</head>
+
+
+<body>
+
+	<div class="cover">
+		<div class="loading">
+			<svg class='icon-x'><use xlink:href='#icon-arrow-circle-right'></use></svg>
+		</div>
+	</div>
+
+	<!-- I enjoy using fontastic.me for svg icons -->
+	<svg xmlns='http://www.w3.org/2000/svg' style='display: none;'>
+		<!-- icons -->
+    <symbol id='icon-arrow-circle-right' viewBox='0 0 512 512'>
+      <path d='m404 256c0-5-2-9-5-13l-26-26l-104-103c-3-4-8-5-13-5c-5 0-9 1-13 5l-26 26c-3 3-5 7-5 13c0 5 2 9 5 12l54 54l-143 0c-5 0-9 2-13 6c-3 3-5 8-5 13l0 36c0 5 2 10 5 13c4 4 8 6 13 6l143 0l-54 54c-3 3-5 7-5 12c0 5 2 10 5 13l26 26c4 4 8 5 13 5c5 0 10-1 13-5l104-103l26-26c3-4 5-8 5-13z m71 0c0 40-9 77-29 110c-20 34-46 60-80 80c-33 20-70 29-110 29c-40 0-77-9-110-29c-34-20-60-46-80-80c-20-33-29-70-29-110c0-40 9-77 29-110c20-34 46-60 80-80c33-20 70-29 110-29c40 0 77 9 110 29c34 20 60 46 80 80c20 33 29 70 29 110z'/>
+    </symbol>
+
+	</svg>
+
+
+	<header class='container global-header'>
+	<div class='inner-w'>
+
+		<div class='image-w insignia'>
+			<img src='http://sheriffderek.consulting/resources/social/insignia/512.png' alt=''>
+		</div>
+
+		<h1 class='view-trigger site-title' data-view='welcome'>
+			<span class='invisible'>sheriffderek</span><span>Client information</span>
+		</h1>
+		<div class='beta'>This has been abandoned and recreated in the new website - So, I've removed the ability to email it to me for now. When your happy with your results, just copy and paste them into an email to me - and I'll update them. : )</div>
+
+	</div>
+	</header>
+
+
+	<!-- $welcome -->
+<!-- 	<section class='container [ js-view ] welcome '>
+	<div class='inner-w'>
+
+		<h2>Welcome</h2>
+
+		<p>The reasons why you should look at this page.</p>
+
+		<ol>
+			<li>Because</li>
+			<li>Because</li>
+			<li>Because</li>
+		</ol>
+
+	</div>
+	</section> -->
+
+
+	<!-- $google results -->
+	<section class='container [ js-view ] app google-results' data-ng-app=''>
+	<div class='inner-w'>
+
+		<article>
+
+		<h2>Google results</h2>
+
+		<p>Remember those little alphabetized cards in the library that you looked through to find books based on topic, author, date, year, subject, genre, section, format and more? <em>Or</em>, if you don't remember those cards <em>and have never heard of the Dewey Decimal System</em> - then maybe you remember asking the librarian to look up a book for you / or later when the library began having available computers for all? Either way - what I want you to think about when you search - "The Internet" using a search engine - is that you are searching through a library catalog. So when you type in your query... the computer is going to run it's little fingers through all of those library index cards for you. (It's much faster)...  BUT don't take those cards - and the organization of this library for granted. Someone has to make a title for these books and craft a description - and associate it with a genre etc. In this case --- THAT'S YOU!</p>
+
+		<p>The goal here... is to craft an intelligent block of information - without stuffing it with the same words... but by using as many characters as allowed for each section to help properly index your site. Your title can have up to 61 characters before getting cut-off in a standard desktop Google result. For the description, you should try and hit around 160 characters. Tell 10 friends what your website is about and what you do - or what your business is... have them perform a search to find you. Take those 10 searches and collect the common words... then use them to craft a pleasing and information-full description of your site. Think about location and what makes what you do - special and specific. Help others find you.</p>
+
+			<section class='container input-area'>
+
+				<h3 class='fade-out'>Input</h3>
+
+
+				<form id='form' action='http://formspree.io/info@sheriffderek.consulting' method='post'>
+
+					<ul class='block-list input-list fade-out'>
+
+						<li class='block'>
+							<label for='title-input'>Site title</label>
+							<textarea name='meta-data-title' id='title-input' class='title-input' data-ng-model='title'></textarea>
+							<div class='count'>
+								<span class='number'></span>
+								Characters remaining.
+							</div>
+						</li>
+
+						<li class='block'>
+							<label for='url'>Site URL</label>
+							<textarea id='url-input' class='url-input' data-ng-model='url' placeholder='site.com'></textarea>
+						</li>
+
+						<li class='block'>
+							<label for='description-input'>Site description</label>
+							<textarea name='meta-data-description' id='description-input'class='description-input' data-ng-model='description'></textarea>
+							<div class='count'>
+								<span class='number'></span>
+								Characters remaining.
+							</div>
+						</li>
+
+					</ul> <!-- .input-list -->
+
+
+					<div class='container winner [ fade-in ]'>
+						<h3>Hooray!!! you did it!!!</h3>
+						<p>So... this is what your search results will look like the next time google crawls your site.</p>
+					</div>
+
+
+					<div class='container output-area fade-out [ fade-in ]'>
+
+						<h3 class='fade-out'>Output</h3>
+
+						<a class='link' ng-if='url && title' href='http://{{url}}/' target='new-tab'>
+							<h3 class='title'>{{title}}</h3>
+						</a>
+
+						<p ng-if='!title' class='title ghost'>Your website title would go here | we love it!</p>
+
+						<p ng-if='!url' class='title'>{{title}}</p>
+
+						<p data-ng-if='url' class='url'>http://{{url}}/</p>
+
+						<p data-ng-if='!url' class='url ghost'>http://your-website-url.com/</p>
+
+						<p data-ng-if='description' class='description'>{{description}}</p>
+
+						<p data-ng-if='!description' class='description ghost'>Your carefully crafted description the services, something, or goods provided would appear here. As stated, this description will only be 160 charicters at the most.</p>
+
+					</div>
+
+
+<!-- 					<div class='container send-to-developer'>
+
+						<p>When you are happy with the result, you can copy and paste the output or email it dirrectly to&nbsp;me.</p>
+
+						<div class='button submit [ js-submit ]'>
+							<span>Send this to Derek</span>
+							<svg class='icon-x'><use xlink:href='#icon-arrow-circle-right'></use></svg>
+						</div> <input type='submit' style='display: none' />
+
+					</div> -->
+
+			</form>
+
+
+
+
+
+
+	</div>
+	</section> <!-- .app -->
+
+
+	<!-- $sharing assets -->
+<!-- 	<section class='container [ js-view ] sharing-assets'>
+	<div class='inner-w'>
+
+		<article>
+
+		<h2>Sharing assets</h2>
+
+		<p>We need to be able to share assets quickly and easily. Here is how we will do that.</p>
+
+		<p class='error'>Coming soon</p>
+
+		</article>
+
+	</div>
+	</section> -->
+
+
+	<!-- $screen sharing -->
+<!-- 	<section class='container [ js-view ] screen-sharing'>
+	<div class='inner-w'>
+
+		<article>
+
+			<h2>Screen sharing</h2>
+
+			<p>Your developer is going to need to help you with some trouble-shooting if you are managing your content.</p>
+
+			<p class='error'>Coming soon</p>
+
+		</article>
+
+	</div>
+	</section> -->
+
+
+
+	<!-- scripts -->
+	<script src='javascripts/vendor.js'></script>
+	<script src='javascripts/app.js'></script>
+
+
+</body>
+</html> <!-- fin -->

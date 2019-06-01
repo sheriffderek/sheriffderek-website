@@ -1,0 +1,227 @@
+<!doctype html>
+
+<html ng-app='appName' ng-controller='JanaController'>
+
+
+<head>
+	<title>basic-wire-frames</title>
+	<meta name='description' content='' />
+
+	<link rel='stylesheet' href='stylesheets/app.css' />
+	<link rel='favicon' type='image/png' href='favicon.ico' />
+
+	<meta name='viewport' content='initial-scale=1, maximum-scale=1' />
+
+  <style>
+
+    #cube-w { 
+      perspective: {{gearHeight*10}}px;
+      width: {{ gearWidth }}px;
+      height: {{ gearHeight *1.5}}px;
+      transform: translateZ( -{{ (gearWidth + gearDepth + gearHeight)/3 }}px );
+      transform-style preserve-3d
+    }
+
+    #box .front,
+    #box .back { /* WxH */
+      width: {{ gearWidth}}px;
+      height: {{ gearHeight}}px;
+      /*background: rgba(255,0,0,.8);*/
+    }
+
+    #box .right, 
+    #box .left { /* DxH */
+      width: {{ gearDepth}}px;
+      height: {{ gearHeight}}px;
+      /*background: rgba(0,255,0,.8);*/
+      left: {{leftNudge}}px;
+    }
+
+    #box .top,
+    #box .bottom { /* WxD */
+      width: {{ gearWidth}}px;
+      height: {{ gearDepth}}px;
+      top: {{topNudge}}px;
+    }
+
+    #box .front  { transform: rotateY(   0deg ) translateZ( {{gearDepth/2}}px ); }
+    #box .back   { transform: rotateX( 180deg ) translateZ( {{gearDepth/2}}px ); }
+    #box .right  { transform: rotateY(  90deg ) translateZ( {{gearWidth/2}}px ); }
+    #box .left   { transform: rotateY( -90deg ) translateZ( {{gearWidth/2}}px ); }
+    #box .top    { transform: rotateX(  90deg ) translateZ( {{gearHeight/2}}px ); }
+    #box .bottom { transform: rotateX( -90deg ) translateZ( {{gearHeight/2}}px ); }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- specs input -->
+<section class="container user-specs">
+
+  <form action='POST' class='box-form' name=''>
+    <ul class='block-list input-list'>
+
+      <li class='block'> <!-- width -->
+        <fieldgroup class='size'>
+          
+          <h3><label for='c_width'>width</label></h3>
+          
+          <div class='input-w'>
+            <input ng-model='gearSize.width.feet' ng-change='gather()' type='number' id='w_feet' min='0' />
+            <label for='w_feet'>Feet.</label>
+          </div>
+
+          <div class='input-w'>
+            <input ng-model='gearSize.width.inches' ng-change='gather()' type='number' id='w_inches' min='0' step='.0625' />          
+            <label for='w_inches'>Inches.</label>
+          </div>
+        
+          <input class='collector' type='number' id='c_width' />
+
+        </fieldgroup>
+      </li>
+
+      <li class='block'> <!-- depth -->
+        <fieldgroup class='size'>
+          
+          <h3><label for='c_depth'>depth</label></h3>
+          
+          <div class='input-w'>
+            <input ng-model='gearSize.depth.feet' ng-change='gather()' type='number' id='d_feet' min='0' />
+            <label for='d_feet'>Feet.</label>
+          </div>
+
+          <div class='input-w'>
+            <input ng-model='gearSize.depth.inches' ng-change='gather()' type='number' id='d_inches' min='0' step='.0625' />
+            <label for='d_inches'>Inches.</label>
+          </div>
+        
+          <input class='collector' type='number' id='c_depth' />
+
+        </fieldgroup>
+      </li>
+      
+      <li class='block'> <!-- height -->
+        <fieldgroup class='size'>
+          
+          <h3><label for='c_height'>height</label></h3>
+          
+          <div class='input-w'>
+            <input ng-model='gearSize.height.feet' ng-change='gather()' type='number' id='h_feet' min='0' />
+            <label for='h_feet'>Feet.</label>
+          </div>
+
+          <div class='input-w'>
+            <input ng-model='gearSize.height.inches' ng-change='gather()' type='number' id='h_inches' min='0' step='.0625' />
+            <label for='h_inches'>Inches.</label>
+          </div>
+
+          <input class='collector' type='number' id='c_height' />
+
+        </fieldgroup>
+      </li>
+
+    </ul>
+  </form>
+
+</section>
+
+
+<!-- 3d -->
+<div class="container three-d">
+
+	<section class='container' id="cube-w">
+		<div id="box" class='show-top'>
+
+      <div class="front">front</div>
+      <div class="back">back</div>
+      <div class="right">right</div>
+      <div class="left">left</div>
+      <div class="top">top</div>
+      <div class="bottom">bottom</div>
+
+		</div>
+	</section>
+
+  <div class='container options' id="options">
+
+    <p>
+      <button class='turn' data-view='show-front'>Front</button>
+      <button class='turn' data-view='show-left'>Left</button>
+      <button class='turn' data-view='show-top'>Top</button>
+    </p>
+
+    <p>
+      <button id="toggle-backface">
+        Toggle Backface Visibility
+      </button>
+    </p>
+
+  </div>
+
+  <form action='POST' class='box-form' name=''>
+    <ul class='block-list input-list'>
+
+      <li class='block walls'> <!-- x -->
+        <label for=''>outer-shell thickness<br />
+          <select ng-model="shellSizeSelect" ng-change='gather()' ng-options="shellSize.name for shellSize in shellSizes"></select>
+        </label>
+
+        <label for=''>foam thickness<br />
+          <select ng-model="foamSizeSelect" ng-change='gather()' ng-options="foamSize.name for foamSize in foamSizes"></select>
+        </label>
+      </li>
+
+    </ul>
+  </form>
+
+</div>
+
+<!-- 2d -->
+<section class='container two-d build'>
+
+  <div class='case ghost'>
+    <div class='shell' style='
+    padding: {{shellWidth}}px;'>
+    
+      <div class='foam'style='
+		     	padding: {{foamWidth}}px;'>
+        <!-- WxD -->
+      	<div class="object" style='
+		      width:  {{gearWidth}}px;
+		      height: {{gearDepth}}px;
+        '>
+          <h3>the object is:</h3>
+          <span class='width'>width: {{gearWidth}}</span><br />
+          <span class='depth'>depth: {{gearDepth}}</span><br />
+          <span class='height'>height: {{gearHeight}}</span><br /><br />
+          
+          <h3>the total case size is:</h3>
+          <span class='width'>width: {{totalWidth}}</span><br />
+          <span class='depth'>depth: {{totalDepth}}</span><br />
+          <span class='height'>height: {{totalHeight}}</span>
+      	</div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+<!-- △△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△△ -->
+
+<!-- scripts -->
+<script src='javascripts/vendor.js'></script>
+<script src='javascripts/app.js'></script>
+
+
+</body>
+</html> <!-- fin -->
