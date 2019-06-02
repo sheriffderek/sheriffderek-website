@@ -1294,6 +1294,10 @@ p a {
 .theme-name .content ol li {
   margin-bottom: 0.6rem;
 }
+.theme-name .content ul a,
+.theme-name .content ol a {
+  display: inline-block;
+}
 .theme-name .content ul {
   list-style: circle;
   color: #111;
@@ -1322,7 +1326,7 @@ p a {
 }
 .theme-name .content ul a,
 .theme-name .content p a {
-  color: #bf004c;
+  text-decoration: underline;
 }
 .theme-name .content ul {
   max-width: 700px;
