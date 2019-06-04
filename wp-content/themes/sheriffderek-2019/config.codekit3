@@ -81,23 +81,23 @@
 		"oAP": "/header.php",
 		"oF": 0
 		},
-	"/images/free.jpg": {
-		"ft": 16384,
-		"iS": 78936,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/free.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"/images/goofy.jpg": {
 		"ft": 16384,
 		"iS": 6805,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/images/goofy.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/images/meta/free.jpg": {
+		"ft": 16384,
+		"iS": 78936,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/meta/free.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
