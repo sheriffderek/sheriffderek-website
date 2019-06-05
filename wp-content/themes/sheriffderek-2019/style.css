@@ -1331,6 +1331,14 @@ p a {
 .theme-name .content ul {
   max-width: 700px;
 }
+.theme-name .content.x > ul {
+  margin-top: 1.2rem;
+  color: #f00;
+}
+.theme-name .content.x > ul > li {
+  color: #f06;
+  margin-top: 1.2rem;
+}
 .theme-name ::-moz-selection {
   background: #90ee90 /* WebKit/Blink Browsers */;
   color: #efefef;
