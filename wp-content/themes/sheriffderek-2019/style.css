@@ -1331,6 +1331,10 @@ p a {
 .theme-name .content ul {
   max-width: 700px;
 }
+.theme-name .content ul a,
+.theme-name .content ol a {
+  text-decoration: underline;
+}
 .theme-name .content.x > ul {
   margin-top: 1.2rem;
   color: #f00;
