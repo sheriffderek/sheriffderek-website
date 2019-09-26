@@ -17,7 +17,7 @@
 
       <?php // include('components/small-menu.php'); ?>
 
-      <?php include('components/site-heading.php'); ?>
+      <?php // include('components/site-heading.php'); ?>
 
     </div>
     </header>
