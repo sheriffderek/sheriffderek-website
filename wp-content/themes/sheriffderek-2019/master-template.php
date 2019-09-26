@@ -1,3 +1,9 @@
+<?php
+  /*
+    Template name: 'Master template'
+  */
+?>
+
 <?php get_header(); ?>
 
 

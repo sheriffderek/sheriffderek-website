@@ -181,25 +181,15 @@ p::-moz-selection {
 /*   border: 1px solid red; */
 }
 
-aside.heading {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: $pad*4;
-  .info {
-    margin-left: 1rem;
-    @media (max-width: 598px) {
-      h1 {
-        opacity: 0;
-        max-height: 0px;
-        max-width: 0px;
-        overflow: hidden;
-      }
-    }
-    h1 {
-      margin-bottom: $pad*.25;
-    }
-  }
-}
-
-
+aside.site-heading
+  display: flex
+  flex-direction: row
+  align-items: center
+  margin-bottom: $pad*4
+  .info
+    margin-left: $pad
+  .company-name
+    line-height: 1
+  .phone-number
+    line-height: 1
+    margin-top: $pad*.5

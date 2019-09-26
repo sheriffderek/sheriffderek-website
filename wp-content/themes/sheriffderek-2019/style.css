@@ -1410,7 +1410,7 @@ p a {
   max-height: 60px;
 /*   border: 1px solid red; */
 }
-.theme-name aside.heading {
+.theme-name aside.site-heading {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -1423,17 +1423,13 @@ p a {
           align-items: center;
   margin-bottom: 2.4rem;
 }
-.theme-name aside.heading .info {
-  margin-left: 1rem;
+.theme-name aside.site-heading .info {
+  margin-left: 0.6rem;
 }
-@media (max-width: 598px) {
-  .theme-name aside.heading .info h1 {
-    opacity: 0;
-    max-height: 0px;
-    max-width: 0px;
-    overflow: hidden;
-  }
+.theme-name aside.site-heading .company-name {
+  line-height: 1;
 }
-.theme-name aside.heading .info h1 {
-  margin-bottom: 0.15rem;
+.theme-name aside.site-heading .phone-number {
+  line-height: 1;
+  margin-top: 0.3rem;
 }
