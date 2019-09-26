@@ -5,6 +5,7 @@
 
 
 <signup-form>
+
   <header>
     <h2 class='invitation'><em>Subscribe to <span class='name'>@sheriffderek's mailing list</span></em><br /> </h2>
 
@@ -16,7 +17,7 @@
 
   <?php if ($action) { ?>
   <form class='form validate'
-    action='<?php $action ?>'
+    action='<?php echo $action ?>'
     method='post' id='mc-embedded-subscribe-form'
     name='mc-embedded-subscribe-form' 
     target='_blank'
