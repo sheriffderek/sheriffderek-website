@@ -184,25 +184,20 @@ html *:after {
 @media screen and (min-width: 400px) {
   body {
     display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
             flex-direction: column;
     min-height: 100vh;
   }
 }
 .page-content {
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
           flex-grow: 1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
           flex-direction: column;
 }
 .site-header {
@@ -215,11 +210,9 @@ html *:after {
   margin-right: auto;
   padding: 0.6rem;
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
           flex-direction: column;
 }
 @font-face {
@@ -603,11 +596,9 @@ p a {
 .form .field {
   display: block;
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
           flex-direction: column;
   cursor: pointer;
   padding: 0.6rem;
@@ -1120,11 +1111,9 @@ p a {
 }
 .theme-name .menu-site-menu-container .menu {
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
           flex-direction: row;
 }
 .theme-name .menu-site-menu-container .menu-item a {
@@ -1146,14 +1135,11 @@ p a {
 }
 .theme-name .articles-by-catagory .item-list {
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: end;
-  -webkit-align-items: flex-end;
           align-items: flex-end;
 }
 .theme-name .articles-by-catagory .link {
@@ -1197,11 +1183,9 @@ p a {
 }
 .theme-name .site-menu .item-list {
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
           flex-direction: row;
   -webkit-transform: translate(-0.6rem, 0);
           transform: translate(-0.6rem, 0);
@@ -1412,14 +1396,11 @@ p a {
 }
 .theme-name aside.site-heading {
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
           flex-direction: row;
   -webkit-box-align: center;
-  -webkit-align-items: center;
           align-items: center;
   margin-bottom: 2.4rem;
 }
@@ -1432,4 +1413,8 @@ p a {
 .theme-name aside.site-heading .phone-number {
   line-height: 1;
   margin-top: 0.3rem;
+}
+.theme-name signup-form {
+  display: block;
+  margin-top: 2.4rem;
 }
